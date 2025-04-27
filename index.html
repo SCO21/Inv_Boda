@@ -7,7 +7,7 @@
 
   <!-- Fuentes corregidas -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;700&family=Great+Vibes&family=Tenor+Sans&family=Water+Brush&display=swap" rel="stylesheet">
-
+  
   <!-- Estilos -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -31,8 +31,9 @@
 
   <!-- Sección Nuestra Historia -->
   <section class="nuestra-historia" id="nuestra-historia">
-    <div class="flores-fondo"></div> <!-- Fondo de flores abajo izquierda -->
-    
+    <div class="flores esquina"></div> <!-- Fondo de flores abajo izquierda -->
+    <img src="../assets/images/flores_fondo.png" alt="Flores decorativas" class="flores arriba">
+
     <div class="contenido-historia">
         <div class="historia-texto">
         <h2>NUESTRA HISTORIA</h2>
@@ -50,11 +51,108 @@
     </div>
 
     <div class="historia-imagen">
-      <div class="flores-imagen"></div> <!-- Fondo de flores detrás de la foto -->
+      <div class="flores detras"></div> <!-- Fondo de flores detrás de la foto -->
       <img src="../assets/images/nuestra_historia.jpg" alt="Foto de nuestra historia">
       <div class="imagen-overlay"></div>
     </div>
   </section>
   
+   <!-- Sección programa -->
+  <section class="programa" id="programa">\
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <h2>PROGRAMA</h2>
+    <div class="programa-grid">
+      <div class="programa-item">
+        <img src="../assets/images/ceremonia.png" alt="Ceremonia">
+        <h3>Ceremonia</h3>
+        <div class="programa-textos">
+          <p>17 de enero 2026<br>Capilla de Hacienda Ryu<br>4:00</p>
+        </div>
+      </div>
+  
+      <div class="programa-item">
+        <img src="../assets/images/coctel_bienvenida.png" alt="Coctel de Bienvenida">
+        <h3>Coctel de Bienvenida</h3>
+        <div class="programa-textos">
+          <p>17 de enero 2026<br>Hacienda Ryu<br>5:15</p>
+        </div>
+      </div>
+  
+      <div class="programa-item">
+        <img src="../assets/images/Cena.png" alt="Cena">
+        <h3>Cena</h3>
+        <div class="programa-textos">
+          <p>17 de enero 2026<br>Hacienda Ryu<br>7:00</p>
+        </div>
+      </div>
+  
+      <div class="programa-item">
+        <img src="../assets/images/fiesta.png" alt="Fiesta">
+        <h3>Fiesta</h3>
+        <div class="programa-textos">
+          <p>17 de enero 2026<br>Hacienda Ryu<br>Después de cena</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+     <!-- Sección codigo vestimenta -->
+
+     <section id="codigo-vestimenta" class="codigo-vestimenta">
+      <div class="flores esquina"></div> <!-- Fondo de flores abajo izquierda -->
+     
+      
+      <div class="vestimenta-contenido">
+        <div class="vestimenta-imagen">
+          <img src="../assets/images/cod_vestimenta.png" alt="Código de Vestimenta">
+        </div>
+        <div class="vestimenta-texto">
+          <h2>CÓDIGO DE <br> VESTIMENTA</h2>
+          <p><strong>Saco y corbata</strong><br>Para los caballeros</p>
+          <p><strong>Vestido largo de noche o vestido tipo cóctel</strong><br>Para las damas</p>
+          <p><strong>Color blanco reservado para la novia</strong></p>
+        </div>
+      </div>
+    </section>
+    
+     <!-- Sección contador -->
+
+
+    <section class="contador-boda" id="contador-boda">
+      <div class="contador-overlay">
+        <p class="contador-texto">DÍAS RESTANTES ANTES DE DECIR “SÍ, ACEPTO”</p>
+        <div class="contador-numeros">
+          <div>
+            <span id="dias">0</span>
+            <p class="contador-label">DÍAS</p>
+          </div>
+          <div>
+            <span id="horas">00</span>
+            <p class="contador-label">HORAS</p>
+          </div>
+          <div>
+            <span id="minutos">00</span>
+            <p class="contador-label">MINUTOS</p>
+          </div>
+          <div>
+            <span id="segundos">00</span>
+            <p class="contador-label">SEGUNDOS</p>
+          </div>
+        </div>
+      </div>
+      <div class="contador-imagen">
+        <img src="../assets/images/fondo-contador.png" alt="Decoración" class="imagen-fondo">
+      </div>
+    </section>
+    
+    <script src="../js/contador.js"></script> <!-- Importación final -->
+    
+
+
+    
+  
+
+
+
 </body>
 </html>

@@ -126,6 +126,7 @@ h3 {
       background-position: top center;
     }
 }
+/* Cuadrar la vista en pc */
   
 /* Sección Nuestra Historia */
 .nuestra-historia {
@@ -141,33 +142,35 @@ h3 {
     overflow: hidden;
 }
   
-.flores-fondo {
-    background-image: url('../assets/images/flores_fondo.png');
-    background-size: 300px;
+.flores {
+    background-image: url('../assets/images/flores_abajo.png');
     background-repeat: no-repeat;
-    background-position: left bottom;
+    background-size: contain;
+    opacity: 0.8; /* visibilidad suave */
+    filter: brightness(0.6) contrast(1);
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 300px;
-    height: 300px;
-    opacity: 1; /* ahora 100% visible */
-    filter: brightness(0.5) contrast(1.2); /* más oscuro y más contraste */
-    z-index: 0;
-}
-.flores-imagen {
-    background-image: url('../assets/images/flores_fondo.png');
-    background-size: 200px;
-    background-repeat: no-repeat;
-    background-position: top left;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.9; /* casi completo */
-    filter: brightness(0.5) contrast(1.2); /* también más oscuro */
     z-index: 1;
-}
+  }
   
+  .flores.esquina {
+    width: 500px;
+    height: 250px;
+    left: 0;
+    bottom: 0;
+    opacity: 0.7; /* visibilidad suave */
+  }
+  
+  
+  .flores.arriba {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px; /* ajusta el tamaño si quieres */
+    opacity: 0.2; /* para que no tape el contenido */
+    transform: scaleX(-1); /* Esto voltea horizontalmente */
+    opacity: 0.8; /* visibilidad suave */
+    z-index: 1;
+  }
 .contenido-historia {
     position: relative;
     z-index: 1;
@@ -181,6 +184,7 @@ h3 {
     flex: 1;
     min-width: 280px;
     max-width: 600px;
+    padding-left: 0px;
     text-align: center;
     padding: 0 10px;
 }
@@ -197,19 +201,21 @@ h3 {
   
 .historia-texto h3 {
     font-family: 'Water Brush', cursive;
+    text-transform: lowercase;
     font-size: 32px;
     color: #5b5b5b;
     margin-top: 10px;
     margin-bottom: 40px;
-    text-transform: lowercase;
     letter-spacing: 2px;
 }
   
 .historia-texto p {
     font-family: 'Ibarra Real Nova', serif;
     font-size: 20px;
+    padding-left: 0px;
     line-height: 1.5;
     letter-spacing: 0.01px;
+    text-align: center;
     color: #070707;
     margin-bottom: 25px;
 }
@@ -262,5 +268,277 @@ img {
       sepia(0.2)
       hue-rotate(-10deg);
 }
+
+/* Sección cronograma */
+
+.programa {
+    background-color: #dce6d8; /* el mismo tono de verde claro */
+    background-image: url('../assets/images/flores_arriba.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 400px; /* <-- aquí defines un ancho fijo */
+    padding-top: 80px; /* Ajusta para que no tape tu texto */
+    opacity: 1.5;
+    text-align: center;
+}
+
+  .programa h2 {
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 80px;
+    letter-spacing: 5px;
+  }
   
+  .programa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .programa-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 400px; /* O la altura que necesites */
+  padding: 20px;
+  text-align: center;
+}
+
+.programa-item img {
+  width: 200px;
+  margin-bottom: 20px; /* Ajusta el espacio */
+}
+
+.programa-item h3 {
+  font-family: 'Fraunces', serif;
+  text-transform: none;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.01px;
+  margin: 10px 0;
+  font-size: 24px;
+}
+  
+.programa-textos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px; /* Para que los textos estén parejos */
+}
+  .programa-item p {
+    font-size: 1rem;
+    color: #000;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 768px) {
+    .programa {
+      background-size: 300px; /* Flor más pequeña en celulares */
+      padding-top: 100px; /* menos espacio si quieres */
+    }
+  }
+
+
+/* Sección codigo de vestimenta */
+
+.codigo-vestimenta {
+  position: relative; /* necesario para que las flores se posicionen respecto a esta sección */
+  overflow: hidden; /* para que las flores no se salgan de la sección */
+  background-color: #f9f2e8; /* o el color de fondo que ya tienes */
+  z-index: 0;
+}
+
+.flores {
+  background-image: url('../assets/images/flores_abajo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.8; /* visibilidad suave */
+  filter: brightness(0.6) contrast(1);
+  position: absolute;
+  z-index: 1;
+}
+
+.flores.esquina {
+  width: 500px;
+  height: 250px;
+  left: 0;
+  bottom: 0;
+  opacity: 0.7;
+}
+
+.flores.arriba {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  transform: scaleX(-1);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.vestimenta-contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.vestimenta-imagen img {
+  width: 800px; /* Ajusta el tamaño de la imagen */
+  height: auto;
+}
+
+.vestimenta-texto {
+  margin-left: 60px;
+  text-align: left;
+}
+
+.vestimenta-texto h2 {
+  font-size: 48px;
+  font-family: 'Ibarra Real Nova', serif;
+  font-weight: bold;
+  text-align: center;
+  font-style: italic;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.vestimenta-texto p {
+  font-size: 30px;
+  font-family: 'Ibarra Real Nova', serif;
+  text-align: center;
+  font-weight: 100;
+  padding-top: 30px;
+  line-height: 1.8;
+}
+
+.vestimenta-texto p strong {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .vestimenta-contenido {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .vestimenta-imagen img {
+    width: 480px;
+    margin-top: 10px;
+  }
+
+  .vestimenta-texto {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .vestimenta-texto h2 {
+    font-size: 35px;
+    margin: 20px 0 10px 0;
+  }
+
+  .vestimenta-texto p {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+}
+
+
+/* Sección contador */
+
+.contador-boda {
+  background-image: url('../assets/images/flores_arriba.png');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 400px; /* <-- aquí defines un ancho fijo */
+  position: relative;
+  background-color: #505c4d;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contador-overlay {
+  padding: 40px 20px;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.contador-texto {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.contador-numeros {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contador-numeros div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contador-numeros span {
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'Fraunces', serif;
+}
+
+.contador-label {
+  margin-top: 5px;
+  font-size: 1rem;
+  font-family: 'Fraunces', serif;
+}
+
+/* Imagen */
+.contador-imagen {
+  width: 100%;
+  height: auto;
+}
+
+.imagen-fondo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Esto hace que no se deforme */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contador-boda {
+    background-size: 150px; /* Flor más pequeña en celulares */
+    padding-top: 10px; /* menos espacio si quieres */
+  }
+  .contador-numeros span {
+    font-size: 2.5rem;
+  }
+  
+  .contador-texto {
+    font-size: 1.2rem;
+  }
+  
+}
+
+
+
+
 
