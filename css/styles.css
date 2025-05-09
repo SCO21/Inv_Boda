@@ -1,306 +1,322 @@
 /* Reset general */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  
+
 /* General */
-body, html {
-    width: 100%;
-    height: 100%;
+body,
+html {
+  width: 100%;
+  height: 100%;
 }
-  
+h1,h2,h3,p{
+  z-index: 20;
+}
+
 .pantalla-completa {
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
-    background-image: url('../assets/images/presentacion.jpg');
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../assets/images/presentacion.jpg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  padding: 100px 20px 20px 20px;
+  overflow: hidden;
+}
+
+.pantalla-completa::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/images/presentacion.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .pantalla-completa {
     background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: center;
-    padding: 100px 20px 20px 20px;
-    overflow: hidden;
+  }
 }
-  
+
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
-  
+
 .contenido-inicio {
-    position: relative;
-    z-index: 2;
-    margin-top: 12vh;
-    color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 2;
+  margin-top: 8vh;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
-  
+
 h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.8rem;
-    font-weight: 300;
-    letter-spacing: 12px;
-    line-height: 1.2;
-    margin-bottom: 5px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3.8rem;
+  font-weight: 300;
+  letter-spacing: 12px;
+  line-height: 1.2;
+  margin-bottom: 5px;
 }
-  
+
 .ampersand {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
-    color: #d1c7b7;
-    margin: 2px 0;
-    display: inline-block;
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  color: #d1c7b7;
+  margin: 2px 0;
+  display: inline-block;
 }
-  
+
 h3 {
-    font-family: 'Tenor Sans', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 5px;
-    margin-top: 100px;
-    text-transform: uppercase;
-    font-weight: 400;
+  font-family: "Tenor Sans", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  /* margin-top: 100px; */
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
 }
-  
+
 .subtitulo-script {
-    font-family: 'Water Brush', cursive;
-    font-size: 4rem;
-    margin-top: 2px;
-    color: #d1c7b7;
-    font-weight: 400;
+  font-family: "Water Brush", cursive;
+  font-size: 4rem;
+  margin-top: 2px;
+  color: #d1c7b7;
+  font-weight: 400;
 }
-  
+
 .fecha-lugar p {
-    font-family: 'Tenor Sans', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 3px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    color: #f3dbb9;
-    font-weight: 400;
+  font-family: "Tenor Sans", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #f3dbb9;
+  font-weight: 400;
 }
-  
+
 .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInMoveUp 1.5s ease forwards;
+}
+
+@keyframes fadeInMoveUp {
+  0% {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInMoveUp 1.5s ease forwards;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-  
-@keyframes fadeInMoveUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-}
-  
+
 @media (max-width: 768px) {
-    h1 {
-      font-size: 2.8rem;
-    }
-    .subtitulo-script {
-      font-size: 2.2rem;
-    }
-    h3 {
-      font-size: 0.9rem;
-    }
-    .fecha-lugar p {
-      font-size: 0.7rem;
-    }
+  h1 {
+    font-size: 2.8rem;
+  }
+  .subtitulo-script {
+    font-size: 2.2rem;
+  }
+  h3 {
+    font-size: 0.9rem;
+  }
+  .fecha-lugar p {
+    font-size: 0.7rem;
+  }
 }
-  
+
 @media (max-aspect-ratio: 9/16) {
-    .pantalla-completa {
-      background-position: top center;
-    }
+  .pantalla-completa {
+    background-position: top center;
+  }
 }
 /* Cuadrar la vista en pc */
-  
+
 /* Sección Nuestra Historia */
 .nuestra-historia {
-    background-color: #faf3e9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 120px 60px;
-    font-weight: 100;
-    gap: 100px;
-    flex-wrap: wrap;
-    position: relative;
-    overflow: hidden;
+  background-color: #faf3e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 60px;
+  font-weight: 100;
+  gap: 100px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
 }
-  
-.flores {
-    background-image: url('../assets/images/flores_abajo.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 0.8; /* visibilidad suave */
-    filter: brightness(0.6) contrast(1);
-    position: absolute;
-    z-index: 1;
-  }
-  
-  .flores.esquina {
-    width: 500px;
-    height: 250px;
-    left: 0;
-    bottom: 0;
-    opacity: 0.7; /* visibilidad suave */
-  }
-  
-  
-  .flores.arriba {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 250px; /* ajusta el tamaño si quieres */
-    opacity: 0.2; /* para que no tape el contenido */
-    transform: scaleX(-1); /* Esto voltea horizontalmente */
-    opacity: 0.8; /* visibilidad suave */
-    z-index: 1;
-  }
-.contenido-historia {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-  
-.historia-texto {
-    flex: 1;
-    min-width: 280px;
-    max-width: 600px;
-    padding-left: 0px;
-    text-align: center;
-    padding: 0 10px;
-}
-  
-.historia-texto h2 {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 36px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-  
-.historia-texto h3 {
-    font-family: 'Water Brush', cursive;
-    text-transform: lowercase;
-    font-size: 32px;
-    color: #5b5b5b;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-}
-  
-.historia-texto p {
-    font-family: 'Ibarra Real Nova', serif;
-    font-size: 20px;
-    padding-left: 0px;
-    line-height: 1.5;
-    letter-spacing: 0.01px;
-    text-align: center;
-    color: #070707;
-    margin-bottom: 25px;
-}
-  
-.historia-imagen {
-    position: relative;
-    width: 100%;
-    max-width: 420px;
-    height: 600px;
-    overflow: hidden;
-    border-radius: 200px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    z-index: 1;
-}
-  
 
-  
+.flores {
+  background-image: url("../assets/images/flores_abajo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.8; /* visibilidad suave */
+  filter: brightness(0.6) contrast(1);
+  position: absolute;
+  z-index: 1;
+}
+
+.flores.esquina {
+  width: 500px;
+  height: 250px;
+  left: 0;
+  bottom: 0;
+  opacity: 0.7; /* visibilidad suave */
+}
+
+.flores.arriba {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px; /* ajusta el tamaño si quieres */
+  transform: scaleX(-1); /* Esto voltea horizontalmente */
+  opacity: 0.8; /* visibilidad suave */
+  z-index: 1;
+}
+.contenido-historia {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.historia-texto {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+  padding-left: 0px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.historia-texto h2 {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.historia-texto h3 {
+  font-family: "Water Brush", cursive;
+  text-transform: lowercase;
+  font-size: 32px;
+  color: #5b5b5b;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.historia-texto p {
+  font-family: "Ibarra Real Nova", serif;
+  font-size: 20px;
+  padding-left: 0px;
+  line-height: 1.5;
+  letter-spacing: 0.01px;
+  text-align: center;
+  color: #070707;
+  margin-bottom: 25px;
+}
+
+.historia-imagen {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
 .historia-imagen img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    transform: scale(1.2);
-    border-radius: 200px;
-    position: relative;
-    z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.2);
+  border-radius: 200px;
+  position: relative;
+  z-index: 2;
 }
-  
+
 .imagen-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(101, 67, 33, 0.4);
-    border-radius: 200px;
-    pointer-events: none;
-    z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(101, 67, 33, 0.4);
+  border-radius: 200px;
+  pointer-events: none;
+  z-index: 3;
 }
-  
+
 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 200px;
-    filter: 
-      brightness(0.85)
-      contrast(1.5)
-      saturate(1.4)
-      sepia(0.2)
-      hue-rotate(-10deg);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* border-radius: 200px;
+     */
+  filter: brightness(0.85) contrast(1.5) saturate(1.4) sepia(0.2)
+    hue-rotate(-10deg);
 }
 
 /* Sección cronograma */
 
 .programa {
-    background-color: #dce6d8; /* el mismo tono de verde claro */
-    background-image: url('../assets/images/flores_arriba.png');
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-size: 400px; /* <-- aquí defines un ancho fijo */
-    padding-top: 80px; /* Ajusta para que no tape tu texto */
-    opacity: 1.5;
-    text-align: center;
+  background-color: #dce6d8; /* el mismo tono de verde claro */
+  background-image: url("../assets/images/flores_arriba.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 400px; /* <-- aquí defines un ancho fijo */
+  padding-top: 80px; /* Ajusta para que no tape tu texto */
+  opacity: 1.5;
+  text-align: center;
 }
 
-  .programa h2 {
-    font-size: 4rem;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 300;
-    color: white;
-    margin-bottom: 80px;
-    letter-spacing: 5px;
-  }
-  
-  .programa-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .programa-item {
+.programa h2 {
+  font-size: 4rem;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 80px;
+  letter-spacing: 5px;
+}
+
+.programa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.programa-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -316,7 +332,7 @@ img {
 }
 
 .programa-item h3 {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
   text-transform: none;
   font-weight: 800;
   line-height: 1;
@@ -324,7 +340,7 @@ img {
   margin: 10px 0;
   font-size: 24px;
 }
-  
+
 .programa-textos {
   display: flex;
   flex-direction: column;
@@ -332,19 +348,18 @@ img {
   align-items: center;
   min-height: 100px; /* Para que los textos estén parejos */
 }
-  .programa-item p {
-    font-size: 1rem;
-    color: #000;
-    line-height: 1.6;
-  }
-  
-  @media (max-width: 768px) {
-    .programa {
-      background-size: 300px; /* Flor más pequeña en celulares */
-      padding-top: 100px; /* menos espacio si quieres */
-    }
-  }
+.programa-item p {
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.6;
+}
 
+@media (max-width: 768px) {
+  .programa {
+    background-size: 300px; /* Flor más pequeña en celulares */
+    padding-top: 100px; /* menos espacio si quieres */
+  }
+}
 
 /* Sección codigo de vestimenta */
 
@@ -356,7 +371,7 @@ img {
 }
 
 .flores {
-  background-image: url('../assets/images/flores_abajo.png');
+  background-image: url("../assets/images/flores_abajo.png");
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0.8; /* visibilidad suave */
@@ -370,7 +385,7 @@ img {
   height: 250px;
   left: 0;
   bottom: 0;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .flores.arriba {
@@ -405,7 +420,7 @@ img {
 
 .vestimenta-texto h2 {
   font-size: 48px;
-  font-family: 'Ibarra Real Nova', serif;
+  font-family: "Ibarra Real Nova", serif;
   font-weight: bold;
   text-align: center;
   font-style: italic;
@@ -416,7 +431,7 @@ img {
 
 .vestimenta-texto p {
   font-size: 30px;
-  font-family: 'Ibarra Real Nova', serif;
+  font-family: "Ibarra Real Nova", serif;
   text-align: center;
   font-weight: 100;
   padding-top: 30px;
@@ -427,12 +442,18 @@ img {
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .vestimenta-contenido {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
     padding: 0 20px;
+  }
+  
+}
+@media (max-width: 768px) {
+  .embellecedor-2::after {
+    display: none;
   }
 
   .vestimenta-imagen img {
@@ -456,11 +477,10 @@ img {
   }
 }
 
-
 /* Sección contador */
 
 .contador-boda {
-  background-image: url('../assets/images/flores_arriba.png');
+  background-image: url("../assets/images/flores_arriba.png");
   background-repeat: no-repeat;
   background-position: right top;
   background-size: 400px; /* <-- aquí defines un ancho fijo */
@@ -478,13 +498,14 @@ img {
 }
 
 .contador-texto {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
   font-size: 1.5rem;
   font-style: italic;
   margin-bottom: 20px;
 }
 
 .contador-numeros {
+
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -499,14 +520,14 @@ img {
 
 .contador-numeros span {
   font-size: 4rem;
-  font-weight: bold;
-  font-family: 'Fraunces', serif;
+  /* font-weight: bold; */
+  font-family: "serif", serif;
 }
 
 .contador-label {
   margin-top: 5px;
   font-size: 1rem;
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
 }
 
 /* Imagen */
@@ -522,8 +543,300 @@ img {
   object-fit: cover; /* Esto hace que no se deforme */
 }
 
+.section-title-primary {
+  font-size: 48px;
+  font-family: "fraunces", serif;
+  font-style: italic;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 20px;
+  /* margin-bottom: 80px; */
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.section-title-secondary {
+  font-size: 48px;
+  font-family: "fraunces", serif;
+  font-style: italic;
+  font-weight: 500;
+  color: black;
+  /* margin-bottom: 80px; */
+  margin-bottom: 20px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+/* .destino {
+  background-color: #d0dccc; 
+  background-image: url("../assets/images/flores_arriba.png");
+  background-repeat: no-repeat;
+
+  background-position: right top;
+  background-size: 400px; 
+  padding-top: 80px;
+  opacity: 1.5;
+  text-align: center;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+.embellecedor-1::before{
+  content: "";
+  position: absolute;
+  background-image: url("../assets/images/flores_arriba.png");
+  background-size: 400px;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+  opacity: 1;
+}
+.embellecedor-1::after{
+  content: "";
+  position: absolute;
+  background-image: url("../assets/images/flores_arriba.png");
+  background-size: 400px;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+  opacity: 1;
+}
+
+.embellecedor-1::before {
+  top: 0;
+  right: -100px;
+  /* transform: scaleX(-1); */
+  transform: rotate(-20deg);
+}
+
+.embellecedor-1::after {
+  bottom: -50px;
+  left: -100px;
+  transform: rotate(150deg);
+}
+.embellecedor-2::before{
+  content: "";
+  position: absolute;
+  background-image: url("../assets/images/flores_fondo.png");
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+}
+.embellecedor-2::after{
+  content: "";
+  position: absolute;
+  background-image: url("../assets/images/flores_fondo.png");
+  /* background-size: 400px; */
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+}
+
+.embellecedor-2::before {
+  left: -50px;
+  top: 0px;
+  /* transform: scaleX(-1); */
+  transform: scaleX(-1) rotate(-120deg);
+}
+
+.embellecedor-2::after {
+  top: -0px;
+  right: -50px;
+  transform: rotate(-120deg);
+}
+.embellecedor-3::before{
+  content: "";
+  position: absolute;
+  background-image: url("../assets/images/flores_fondo.png");
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+}
+.embellecedor-3::after{
+  content: "";
+  position: absolute;
+  background-image: url("../assets/images/flores_fondo.png");
+  /* background-size: 400px; */
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+}
+
+.embellecedor-3::before {
+  left: 50px;
+  bottom: 0px;
+  /* transform: scaleX(-1); */
+  transform: scaleX(-1) rotate(0deg);
+}
+
+.embellecedor-3::after {
+  top: -0px;
+  right: -50px;
+  transform: rotate(-120deg);
+}
+
+.destino {
+  position: relative;
+  overflow: hidden;
+  background-color: #d0dccc;
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.destino-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  z-index: 10;
+  font-family: "Ibarra Real Nova";
+}
+.destino-section {
+  min-width: 400px;
+  width: 33.3333%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.destino-section p{
+padding: 10px;
+}
+.destino-section ul{
+  list-style: none;
+  margin-top: 10px;
+}
+.destino-section li a{
+  color: black;
+}
+.destino-section li a:hover{
+  color: beige;
+}
+/* Preguntas frecuentes */
+.prefrecuentes {
+  background-color: #f9f2e8;
+  background-image: url("../assets/images/flores_arriba.png");
+  background-repeat: no-repeat;
+  z-index: 4;
+  background-position: right top;
+  background-size: 400px;
+  padding-top: 80px;
+  opacity: 1.5;
+  text-align: center;
+  padding: 40px 20px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prefrecuentes .body {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  justify-content: center;
+  align-items: center;
+}
+/* Fin prefrecuentes */
+
+/* Preguntas frecuentes sección 2 */
+.prefrecuentes2 {
+  position: relative;
+  overflow: hidden;
+  background-color: #505c4d;
+  /* background-image: url("../assets/images/flores_arriba.png"); */
+  /* background-repeat: no-repeat; */
+  color: white;
+  background-position: right top;
+  background-size: 400px;
+  padding-top: 80px;
+  opacity: 1.5;
+  text-align: center;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.prefrecuentes2 .body {
+  font-family: 'Ibarra Real Nova';
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  justify-content: center;
+  align-content: center;
+}
+
+/* Conclusion */
+.conclusion {
+  position: relative;
+  overflow: hidden;
+  background-color: #d0dccc; /* el mismo tono de verde claro */
+  /* background-image: url("../assets/images/flores_arriba.png"); */
+  /* background-repeat: no-repeat; */
+
+  background-position: right top;
+  background-size: 400px; /* <-- aquí defines un ancho fijo */
+  padding-top: 80px; /* Ajusta para que no tape tu texto */
+  opacity: 1.5;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: "Ibarra Real Nova";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+.subtitle {
+  font-family: "Ibarra Real Nova";
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 0px;
+}
+.conclusion .body{
+  max-width: 600px;
+  z-index: 10;
+}
+
+
+.btn-confirm{
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  border: solid 1px black;
+  border-radius: 10px;
+  padding-inline: 20px;
+  padding-block: 10px;
+  z-index: 10;
+}
+
+.container-btn{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  
+}
+
+.btn-confirm:hover{
+  background-color: beige;
+}
+/* fin conclusion */
+
 /* Responsive */
 @media (max-width: 768px) {
+  .destino-body{
+    flex-direction: column;
+    align-items: center;
+  }
   .contador-boda {
     background-size: 150px; /* Flor más pequeña en celulares */
     padding-top: 10px; /* menos espacio si quieres */
@@ -531,14 +844,8 @@ img {
   .contador-numeros span {
     font-size: 2.5rem;
   }
-  
+
   .contador-texto {
     font-size: 1.2rem;
   }
-  
 }
-
-
-
-
-
