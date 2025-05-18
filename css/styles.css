@@ -267,7 +267,7 @@ h3 {
 .imagen-container {
   display: flex;
   flex-direction: row;
-  max-width: 500px;
+  max-width: 200px;
 }
 
 .imagen-container #historia1 {
@@ -298,8 +298,8 @@ img {
   object-fit: cover;
   /* border-radius: 200px;
      */
-  filter: brightness(0.85) contrast(1.5) saturate(1.4) sepia(0.2)
-    hue-rotate(-10deg);
+  /* filter: brightness(0.85) contrast(1.5) saturate(1.4) sepia(0.2)
+    hue-rotate(-10deg); */
 }
 
 /* Sección cronograma */
