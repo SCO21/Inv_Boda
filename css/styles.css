@@ -154,7 +154,7 @@ h3 {
 
 /* Sección Nuestra Historia */
 .nuestra-historia {
-  background-color: #faf3e9;
+  /* background-color: #faf3e9; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -248,8 +248,7 @@ h3 {
   width: 100%;
   max-width: 420px;
   height: 600px;
-  overflow: hidden;
-  border-radius: 200px;
+  /* overflow: hidden; */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
@@ -259,10 +258,26 @@ h3 {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  transform: scale(1.2);
-  border-radius: 200px;
+  /* transform: scale(1.2); */
+  /* border-radius: 200px; */
   position: relative;
   z-index: 2;
+}
+
+.imagen-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 500px;
+}
+
+.imagen-container #historia1 {
+  transform: rotate(15deg);
+  position: relative;
+  top: -50px;
+}
+
+.imagen-container #historia2 {
+  transform: rotate(-15deg);
 }
 
 .imagen-overlay {
@@ -324,7 +339,6 @@ img {
   font-family: "Playfair Display", serif;
   font-style: italic;
   font-weight: 300;
-  color: white;
   margin-bottom: 80px;
   letter-spacing: 5px;
 }
@@ -431,7 +445,7 @@ img {
 
 .vestimenta-imagen img {
   width: 800px; /* Ajusta el tamaño de la imagen */
-  height: auto;
+  height: 500px;
 }
 
 .vestimenta-texto {
@@ -465,7 +479,7 @@ img {
 
 @media (max-width: 1200px) {
   .vestimenta-contenido {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 0 20px;
@@ -480,6 +494,7 @@ img {
   .vestimenta-imagen img {
     width: 480px;
     margin-top: 10px;
+    height: 300px;
   }
 
   .vestimenta-texto {
@@ -672,7 +687,7 @@ img {
 .embellecedor-3::before{
   content: "";
   position: absolute;
-  background-image: url("../assets/images/flores_fondo.png");
+  /* background-image: url("../assets/images/flores_fondo.png"); */
   background-repeat: no-repeat;
   width: 400px;
   height: 400px;
@@ -705,12 +720,16 @@ img {
 .destino {
   position: relative;
   overflow: hidden;
-  background-color: #d0dccc;
+  /* background-color: #d0dccc; */
   padding: 40px 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.destino > h2:nth-child(1) {
+  color: black;
 }
 
 
