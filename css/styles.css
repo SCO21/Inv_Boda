@@ -267,8 +267,20 @@ h3 {
 .imagen-container {
   display: flex;
   flex-direction: row;
-  max-width: 200px;
+  max-width: 250px;
+  justify-content: center;
+  margin-left: 60px;
 }
+
+@media (max-width: 800px) {
+  .imagen-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 50%;
+  }
+}
+
 
 .imagen-container #historia1 {
   transform: rotate(15deg);
@@ -510,6 +522,37 @@ img {
   .vestimenta-texto p {
     font-size: 20px;
     margin: 10px 0;
+  }
+
+  .vestimenta-texto {
+    max-width: 90%; /* Limita el ancho del texto al 90% del contenedor */
+    margin: 0 auto; /* Centra el texto horizontalmente */
+    padding: 0 10px; /* Agrega un margen interno para evitar que toque los bordes */
+    text-align: center; /* Asegura que el texto esté centrado */
+  }
+
+  .vestimenta-texto p {
+    font-size: 16px; /* Reduce el tamaño de fuente para pantallas pequeñas */
+    line-height: 1.5; /* Mejora la legibilidad */
+    word-wrap: break-word; /* Ajusta palabras largas */
+    overflow-wrap: break-word; /* Asegura que las palabras largas no se salgan */
+  }
+
+  .vestimenta-texto h2 {
+    font-size: 28px; /* Reduce el tamaño del título */
+    margin-bottom: 20px; /* Ajusta el espaciado inferior */
+  }
+
+  .vestimenta-imagen img {
+    max-width: 100%; /* La imagen no excederá el ancho del contenedor */
+    height: auto; /* Mantiene las proporciones */
+    margin: 0 auto; /* Centra la imagen */
+    display: block; /* Asegura que se comporte como un bloque */
+  }
+
+  .vestimenta-contenido {
+    flex-direction: column; /* Cambia la disposición a columna */
+    align-items: center; /* Centra los elementos */
   }
 }
 
