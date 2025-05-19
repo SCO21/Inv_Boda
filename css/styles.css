@@ -566,6 +566,40 @@ img {
     align-items: center;
   }
 }
+@media (min-width: 820px) {
+
+  /* 1. El contenedor ya no necesita “tapar” nada */
+  .codigo-vestimenta{
+    overflow: visible;            /* permite que la imagen se vea completa   */
+  }
+
+  /* 2. Ilustración fluida y contenida */
+  .vestimenta-imagen img{
+    width: 32vw;                  /* ~un tercio del ancho de la ventana      */
+    max-width: 520px;             /* tope para pantallas Ultra-HD            */
+    height: auto;                 /* quita la cota fija de 500 px            */
+    max-height: 70vh;             /* nunca sobrepasa el 70 % de la altura    */
+    object-fit: contain;          /* asegura que no se distorsione           */
+    display: block;               /* para que no se deforme                  */
+    margin: 0 auto;              /* centrada                                 */
+  }
+  .vestimenta-imagen{
+  display:flex;
+  justify-content:center;
+  gap:2rem;          /* espacio entre la mujer y el hombre */
+}
+  /* 3. Un poco más de separación entre la pareja si hace falta */
+  .vestimenta-contenido{
+    gap: 4rem;                    /* espacio horizontal entre imágenes/texto */
+  }
+}
+
+/* ——  pantallas extra-anchas (opcional) —— */
+@media (min-width: 1600px){
+  .vestimenta-imagen img{
+    width: 28vw;      
+  }
+}
 
 /* Sección contador */
 
