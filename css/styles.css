@@ -278,6 +278,7 @@ h3 {
     flex-direction: row;
     justify-content: center;
     max-width: 50%;
+    margin-left: -10px;
   }
 }
 
@@ -317,7 +318,7 @@ img {
 /* Sección cronograma */
 
 .programa {
-  background-color: #dce6d8; /* el mismo tono de verde claro */
+  background-color: #a8bc84; /* el mismo tono de verde claro */
   background-image: url("../assets/images/flores_arriba.png");
   background-repeat: no-repeat;
   background-position: right top;
@@ -413,7 +414,7 @@ img {
 .codigo-vestimenta {
   position: relative; /* necesario para que las flores se posicionen respecto a esta sección */
   overflow: hidden; /* para que las flores no se salgan de la sección */
-  background-color: #f9f2e8; /* o el color de fondo que ya tienes */
+  background-color: #ffffff; /* o el color de fondo que ya tienes */
   z-index: 0;
 }
 
