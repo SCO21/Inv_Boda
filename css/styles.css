@@ -381,14 +381,15 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 400px; /* O la altura que necesites */
   padding: 20px;
   text-align: center;
 }
 
-.programa-item img {
-  width: 200px;
-  margin-bottom: 20px; /* Ajusta el espacio */
+.programa-item img{
+  height:160px;      /* fuerza la misma “caja” vertical */
+  width:auto;        /* mantiene la proporción           */
+  object-fit:contain;/* si alguna es más ancha, no se deforma */
+  margin-bottom:20px;
 }
 
 .programa-item h3 {
@@ -399,6 +400,8 @@ img {
   letter-spacing: 0.01px;
   margin: 10px 0;
   font-size: 24px;
+  min-height: 50px;
+
 }
 
 .programa-textos {
@@ -406,7 +409,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100px; /* Para que los textos estén parejos */
+ 
   
 }
 
@@ -422,11 +425,13 @@ img {
     background-size: 300px; /* Flor más pequeña en celulares */
     padding-top: 100px; /* menos espacio si quieres */
   }
+
 }
 
 /* Sección codigo de vestimenta */
 
 .codigo-vestimenta {
+  
   position: relative; /* necesario para que las flores se posicionen respecto a esta sección */
   overflow: hidden; /* para que las flores no se salgan de la sección */
   background-color: #ffffff; /* o el color de fondo que ya tienes */
@@ -460,7 +465,13 @@ img {
   opacity: 0.8;
   z-index: 1;
 }
-
+.subline {
+      font-family: "Great Vibes", cursive;
+      font-size: 1.4rem;       /* ajústalo a tu gusto */
+      line-height: 1.2;
+      display: inline-block;   /* mantiene el salto de línea */
+      margin-top: 0.1em;
+    }
 .vestimenta-contenido {
   display: flex;
   justify-content: center;
@@ -487,7 +498,7 @@ img {
   font-weight: bold;
   text-align: center;
   font-style: italic;
-  padding-top: 10px;
+  padding-top: 80px;
   padding-bottom: 30px;
   margin-bottom: 40px;
 }
