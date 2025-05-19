@@ -326,6 +326,16 @@ img {
   padding-top: 80px; /* Ajusta para que no tape tu texto */
   opacity: 1.5;
   text-align: center;
+    color: white;
+
+}
+
+.programa img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Esto hace que no se deforme */
+  filter: brightness(5) contrast(5) saturate(1.4) sepia(0.2)
 }
 @media (max-width: 400px) {
   .programa h2,
@@ -355,6 +365,8 @@ img {
   margin-bottom: 80px;
   letter-spacing: 5px;
 }
+
+
 
 .programa-grid {
   display: grid;
@@ -395,10 +407,13 @@ img {
   justify-content: center;
   align-items: center;
   min-height: 100px; /* Para que los textos estén parejos */
+  
 }
+
+
 .programa-item p {
   font-size: 1rem;
-  color: #000;
+  color: #ffffff;
   line-height: 1.6;
 }
 
@@ -500,60 +515,44 @@ img {
   
 }
 @media (max-width: 768px) {
-  .embellecedor-2::after {
-    display: none;
+  /* limpieza visual */
+  .embellecedor-2::after { display: none; }
+
+  /* ilustración — SOLO esta regla, sin duplicados */
+  .vestimenta-imagen img{
+    width: 80vw;       /* 80 % del viewport            */
+    max-width: 420px;  /* tope en tablets pequeñas     */
+    height: auto;      /* guarda proporción            */
+    display: block;
+    margin: 0 auto;    /* centrada                     */
   }
 
-  .vestimenta-imagen img {
-    width: 480px;
-    margin-top: 10px;
-    height: 300px;
+  /* bloque de texto */
+  .vestimenta-texto{
+    max-width: 90%;
+    margin: -30px auto 20px;  /* -30 px lo sube y pega al dibujo */
+    padding: 0 10px;
+    text-align: center;
   }
 
-  .vestimenta-texto {
-    margin: 0;
-    margin-bottom: 20px;
+  .vestimenta-texto h2{
+    font-size: 28px;
+    margin: 20px 0 10px;
   }
 
-  .vestimenta-texto h2 {
-    font-size: 35px;
-    margin: 20px 0 10px 0;
-  }
-
-  .vestimenta-texto p {
-    font-size: 20px;
+  .vestimenta-texto p{
+    font-size: 16px;
+    line-height: 1.5;
     margin: 10px 0;
+    padding-top: 0;    /* sin hueco extra arriba       */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
-  .vestimenta-texto {
-    max-width: 90%; /* Limita el ancho del texto al 90% del contenedor */
-    margin: 0 auto; /* Centra el texto horizontalmente */
-    padding: 0 10px; /* Agrega un margen interno para evitar que toque los bordes */
-    text-align: center; /* Asegura que el texto esté centrado */
-  }
-
-  .vestimenta-texto p {
-    font-size: 16px; /* Reduce el tamaño de fuente para pantallas pequeñas */
-    line-height: 1.5; /* Mejora la legibilidad */
-    word-wrap: break-word; /* Ajusta palabras largas */
-    overflow-wrap: break-word; /* Asegura que las palabras largas no se salgan */
-  }
-
-  .vestimenta-texto h2 {
-    font-size: 28px; /* Reduce el tamaño del título */
-    margin-bottom: 20px; /* Ajusta el espaciado inferior */
-  }
-
-  .vestimenta-imagen img {
-    max-width: 100%; /* La imagen no excederá el ancho del contenedor */
-    height: auto; /* Mantiene las proporciones */
-    margin: 0 auto; /* Centra la imagen */
-    display: block; /* Asegura que se comporte como un bloque */
-  }
-
-  .vestimenta-contenido {
-    flex-direction: column; /* Cambia la disposición a columna */
-    align-items: center; /* Centra los elementos */
+  /* layout general */
+  .vestimenta-contenido{
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -628,7 +627,7 @@ img {
   font-family: "fraunces", serif;
   font-style: italic;
   font-weight: 500;
-  color: white;
+  color: rgb(0, 0, 0);
   margin-bottom: 20px;
   /* margin-bottom: 80px; */
   letter-spacing: 5px;
@@ -639,7 +638,7 @@ img {
   font-family: "fraunces", serif;
   font-style: italic;
   font-weight: 500;
-  color: black;
+  color: rgb(255, 255, 255);
   /* margin-bottom: 80px; */
   margin-bottom: 20px;
   letter-spacing: 5px;
@@ -815,7 +814,7 @@ padding: 10px;
 }
 /* Preguntas frecuentes */
 .prefrecuentes {
-  background-color: #f9f2e8;
+  background-color: #505c4d;
   background-image: url("../assets/images/flores_arriba.png");
   background-repeat: no-repeat;
   z-index: 4;
@@ -823,6 +822,7 @@ padding: 10px;
   background-size: 400px;
   padding-top: 80px;
   opacity: 1.5;
+  color: white;
   text-align: center;
   padding: 40px 20px;
   flex-direction: column;
@@ -843,10 +843,10 @@ padding: 10px;
 .prefrecuentes2 {
   position: relative;
   overflow: hidden;
-  background-color: #505c4d;
+  background-color: #f9f2e8;
   /* background-image: url("../assets/images/flores_arriba.png"); */
   /* background-repeat: no-repeat; */
-  color: white;
+  color: rgb(0, 0, 0);
   background-position: right top;
   background-size: 400px;
   padding-top: 80px;
@@ -871,7 +871,7 @@ padding: 10px;
 .conclusion {
   position: relative;
   overflow: hidden;
-  background-color: #d0dccc; /* el mismo tono de verde claro */
+  background-color: #a8bc84; /* el mismo tono de verde claro */
   /* background-image: url("../assets/images/flores_arriba.png"); */
   /* background-repeat: no-repeat; */
 
@@ -897,14 +897,15 @@ padding: 10px;
 .conclusion .body{
   max-width: 600px;
   z-index: 10;
+  color: white;
 }
 
 
 .btn-confirm{
   text-decoration: none;
-  color: black;
+  color: white;
   text-transform: uppercase;
-  border: solid 1px black;
+  border: solid 1px white;
   border-radius: 10px;
   padding-inline: 20px;
   padding-block: 10px;
@@ -914,6 +915,7 @@ padding: 10px;
 .container-btn{
   margin-top: 30px;
   margin-bottom: 30px;
+  
   
 }
 
